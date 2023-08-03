@@ -1,0 +1,93 @@
+<html>
+<head>
+<script src="jscss/erikzaadi.json"></script>
+<!--<link href="http://projects.erikzaadi.com/atom.xml" rel="alternate" title="Erik Zaadi @ Github" type="application/atom+xml"> -->
+<!--<link media="all" rel="stylesheet" type="text/css" href="jscss/jquery-ui.css">
+<link rel="stylesheet" href="jscss/blueprint.css" type="text/css" media="all">
+<link rel="stylesheet" href="jscss/main.css" type="text/css" media="all"> -->
+</head>
+<body>
+
+
+    <input value="Default" id="simplePrint" type="button">
+    <input value="Popup" id="PrintinPopup" type="button">
+    <input value="Change Title" id="ChangeTitle" type="button">
+    <input value="Popup and Leave open" id="PopupandLeaveopen" type="button">
+    <input value="Strip CSS" id="stripCSS" type="button">
+    <input value="External CSS" id="externalCSS" type="button"><hr>
+    
+    <div id="toPrint">
+        <h2>Here's a sample of an element to print!</h2>
+        <div class="notice">
+            Notice!
+        </div>
+        <div>
+        <iframe src="http://opencompas.com"></iframe>
+            <form>
+                <fieldset>
+                    <legend>
+                       &nbsp;Form inputs test&nbsp;
+                    </legend>
+                    <div class="item">
+                        <span class="labelSpan">Radio Test </span>
+                        <div class="contentDiv">
+                            <input name="radio1" value="1" type="radio"><input name="radio1" value="2" type="radio">
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <span class="labelSpan">
+                            Check Box Test 
+                        </span>
+                        <div class="contentDiv">
+                            <input name="check1" value="1" type="checkbox"><input value="2" type="checkbox">
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <span class="labelSpan">Text Area Test </span>
+                        <div class="contentDiv">
+                            <textarea name="texareatest">                            </textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="jscss/jquery_002.js"></script>
+    <script type="text/javascript" src="jscss/jquery-ui.js"></script>
+    <!--<script type="text/javascript" src="jscss/jquery.js"></script> -->
+    <!--<script type="text/javascript" src="jscss/jquery_003.js"></script>
+    <script type="text/javascript" src="jscss/main.js"></script> -->
+    <script type="text/javascript" src="jscss/jquery.txt"></script>
+    
+    
+    <script type="text/javascript">
+       $(document).ready(function() {
+         $("#simplePrint").click(function() {
+             printElem({});
+         });
+         $("#PrintinPopup").click(function() {
+             printElem({ printMode: 'popup' });
+         });
+         $("#ChangeTitle").click(function() {
+             printElem({ pageTitle: 'thisWillBeTheNameInThePrintersLog.html' });
+         });
+         $("#PopupandLeaveopen").click(function() {
+             printElem({ leaveOpen: true, printMode: 'popup' });
+         });
+         $("#stripCSS").click(function() {
+             printElem({ overrideElementCSS: true });
+         });
+         $("#externalCSS").click(function() {
+             printElem({ overrideElementCSS: ['http://assets3.github.com/stylesheets/bundle.css?180c214baeba2d8a1194e7b48ea7581cfee3e505'] });
+         });
+     });
+ function printElem(options){
+     $('#toPrint').printElement(options);
+ }
+
+    </script>
+
+</body></html>
